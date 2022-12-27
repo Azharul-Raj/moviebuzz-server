@@ -18,7 +18,7 @@ const tmdbEndpoints = {
   mediaRecommend: ({ mediaType, mediaId }) => {
     tmdbConfig.getUrl(`${mediaType}/${mediaId}/recommendations`);
   },
-  mediaImage: ({ mediaType, mediaId }) => {
+  mediaImages: ({ mediaType, mediaId }) => {
     tmdbConfig.getUrl(`${mediaType}/${mediaId}/images`);
   },
   mediaSearch: ({ mediaType, query, page }) => {
