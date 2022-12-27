@@ -10,3 +10,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+const port = process.env.PORT || 3001;
+
+const server = http.createServer(app);
+mongoose.connect(process.emv.MONGODB_URL).then(() => {
+    server.listen(port, () => {
+        console.log(`Server is running at ${port}`);
+    })
+}).catch(err=>console.log(err))
