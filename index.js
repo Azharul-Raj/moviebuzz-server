@@ -14,7 +14,8 @@ app.use(cookieParser());
 const port = process.env.PORT || 3001;
 
 const server = http.createServer(app);
-mongoose.connect(process.emv.MONGODB_URL).then(() => {
+mongoose.set('strictQuery', true)
+mongoose.connect(process.env.MONGODB_URL).then(() => {
     server.listen(port, () => {
         console.log(`Server is running at ${port}`);
     })
