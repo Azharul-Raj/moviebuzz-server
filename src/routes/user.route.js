@@ -101,5 +101,13 @@ router.post(
         .custom(type => ['movie', 'tv'].includes(type).withMessage('mediaType Invalid')),
     body("mediaId")
         .exists().withMessage("mediaId is requires")
-    .isLength({min:1}).withMessage("mediaId can not be empty")
+        .isLength({ min: 1 }).withMessage("mediaId can not be empty"),
+    body("mediaTitle")
+        .exists().withMessage("mediaTitle is required"),
+    body("mediaPoster")
+        .exists().withMessage("mediaPoster is required"),
+    body("mediaRate")
+        .exists().withMessage("mediaRate is required"),
+    favoriteController.addFavorite    
 )
+
